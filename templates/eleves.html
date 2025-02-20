@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Élèves</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Élèves</h1>
+        <ul>
+            {% for eleve in eleves_data %}
+                <li>
+                    Prénom de l'élève : {{ eleve.prenom_eleve }}<br>
+                    Prénom du responsable légal : {{ eleve.prenom_responsable }}<br>
+                    Nom du responsable légal : {{ eleve.nom_responsable }}<br>
+                    Civilité : {{ eleve.civilite }}<br>
+                    Date de naissance : {{ eleve.date_naissance }}<br>
+                    Ville de naissance : {{ eleve.ville_naissance }}<br>
+                    Département de naissance : {{ eleve.departement_naissance }}<br>
+                    Pays de naissance : {{ eleve.pays_naissance }}<br>
+                    Numéro de sécurité sociale : {{ eleve.numero_securite_sociale }}<br>
+                    Numéro de rue : {{ eleve.numero_rue }}<br>
+                    Lettre : {{ eleve.lettre }}<br>
+                    Type de voie : {{ eleve.type_voie }}<br>
+                    Libellé de la voie : {{ eleve.libelle_voie }}<br>
+                    Complément d'adresse : {{ eleve.complement_adresse }}<br>
+                    Lieu-dit : {{ eleve.lieu_dit }}<br>
+                    Code postal : {{ eleve.code_postal }}<br>
+                    Ville : {{ eleve.ville }}<br>
+                    Téléphone : {{ eleve.telephone }}<br>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+</body>
+</html>
