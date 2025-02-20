@@ -1,6 +1,6 @@
 from flask import Flask, render_template
 from flask import jsonify, request
-from google_calendar import authenticate_google_calendar, get_events_by_keyword
+from google_calendar import authenticate_google_calendar, get_events_by_keyword, export_lessons_to_db
 from models import db, Cours, Eleve, Emploi
 import os
 
@@ -124,6 +124,13 @@ def add_emploi():
     db.session.add(emploi)
     db.session.commit()
     return jsonify({'id': emploi.id, 'message': 'Emploi ajouté avec succès !'}), 201
+
+@app.route('/add_cours', methods=['GET'])
+def test():
+    service = authenticate_google_calendar()
+    events = get_events_by_keyword(service, 'Cours')
+    export_lessons_to_db(events)
+    return "Les cours ont été ajoutés avec succès à la base de données."
 
 @app.route('/clear', methods=['DELETE', 'GET'])
 def clear_database():
