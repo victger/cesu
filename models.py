@@ -10,7 +10,6 @@ class Cours(db.Model):
     date_debut = db.Column(db.Date, nullable=False)
     date_fin = db.Column(db.Date, nullable=False)
     duree = db.Column(db.Float, nullable=False)
-    prix = db.Column(db.Float, nullable=True)
 
     def __repr__(self):
         return f"<Cours {self.prenom_eleve} - {self.date_debut}>"
@@ -36,6 +35,7 @@ class Eleve(db.Model):
     code_postal = db.Column(db.String(10), nullable=True)
     ville = db.Column(db.String(100), nullable=True)
     telephone = db.Column(db.String(20), nullable=True)
+    prix = db.Column(db.Float, nullable=True)
 
     def __repr__(self):
         return f"<Eleve {self.prenom_eleve} - {self.nom_responsable}>"

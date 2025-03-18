@@ -3,35 +3,71 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Élèves</title>
+    <title>Configuration des Élèves</title>
 </head>
 <body>
     <div class="container">
-        <h1>Élèves</h1>
-        <ul>
-            {% for eleve in eleves_data %}
-                <li>
-                    Prénom de l'élève : {{ eleve.prenom_eleve }}<br>
-                    Prénom du responsable légal : {{ eleve.prenom_responsable }}<br>
-                    Nom du responsable légal : {{ eleve.nom_responsable }}<br>
-                    Civilité : {{ eleve.civilite }}<br>
-                    Date de naissance : {{ eleve.date_naissance }}<br>
-                    Ville de naissance : {{ eleve.ville_naissance }}<br>
-                    Département de naissance : {{ eleve.departement_naissance }}<br>
-                    Pays de naissance : {{ eleve.pays_naissance }}<br>
-                    Numéro de sécurité sociale : {{ eleve.numero_securite_sociale }}<br>
-                    Numéro de rue : {{ eleve.numero_rue }}<br>
-                    Lettre : {{ eleve.lettre }}<br>
-                    Type de voie : {{ eleve.type_voie }}<br>
-                    Libellé de la voie : {{ eleve.libelle_voie }}<br>
-                    Complément d'adresse : {{ eleve.complement_adresse }}<br>
-                    Lieu-dit : {{ eleve.lieu_dit }}<br>
-                    Code postal : {{ eleve.code_postal }}<br>
-                    Ville : {{ eleve.ville }}<br>
-                    Téléphone : {{ eleve.telephone }}<br>
-                </li>
-            {% endfor %}
-        </ul>
+        <h1>Configuration des Élèves</h1>
+        <form action="/update_eleve" method="POST">
+            <label for="prenom_eleve">Prénom de l'élève :</label>
+            <input type="text" id="prenom_eleve" name="prenom_eleve" value="{{ eleve.prenom_eleve }}"><br>
+
+            <label for="prenom_responsable">Prénom du responsable légal :</label>
+            <input type="text" id="prenom_responsable" name="prenom_responsable" value="{{ eleve.prenom_responsable }}"><br>
+
+            <label for="nom_responsable">Nom du responsable légal :</label>
+            <input type="text" id="nom_responsable" name="nom_responsable" value="{{ eleve.nom_responsable }}"><br>
+
+            <label for="civilite">Civilité :</label>
+            <input type="text" id="civilite" name="civilite" value="{{ eleve.civilite }}"><br>
+
+            <label for="date_naissance">Date de naissance :</label>
+            <input type="date" id="date_naissance" name="date_naissance" value="{{ eleve.date_naissance }}"><br>
+
+            <label for="ville_naissance">Ville de naissance :</label>
+            <input type="text" id="ville_naissance" name="ville_naissance" value="{{ eleve.ville_naissance }}"><br>
+
+            <label for="departement_naissance">Département de naissance :</label>
+            <input type="text" id="departement_naissance" name="departement_naissance" value="{{ eleve.departement_naissance }}"><br>
+
+            <label for="pays_naissance">Pays de naissance :</label>
+            <input type="text" id="pays_naissance" name="pays_naissance" value="{{ eleve.pays_naissance }}"><br>
+
+            <label for="numero_securite_sociale">Numéro de sécurité sociale :</label>
+            <input type="text" id="numero_securite_sociale" name="numero_securite_sociale" value="{{ eleve.numero_securite_sociale }}"><br>
+
+            <label for="numero_rue">Numéro de rue :</label>
+            <input type="text" id="numero_rue" name="numero_rue" value="{{ eleve.numero_rue }}"><br>
+
+            <label for="lettre">Lettre :</label>
+            <input type="text" id="lettre" name="lettre" value="{{ eleve.lettre }}"><br>
+
+            <label for="type_voie">Type de voie :</label>
+            <input type="text" id="type_voie" name="type_voie" value="{{ eleve.type_voie }}"><br>
+
+            <label for="libelle_voie">Libellé de la voie :</label>
+            <input type="text" id="libelle_voie" name="libelle_voie" value="{{ eleve.libelle_voie }}"><br>
+
+            <label for="complement_adresse">Complément d'adresse :</label>
+            <input type="text" id="complement_adresse" name="complement_adresse" value="{{ eleve.complement_adresse }}"><br>
+
+            <label for="lieu_dit">Lieu-dit :</label>
+            <input type="text" id="lieu_dit" name="lieu_dit" value="{{ eleve.lieu_dit }}"><br>
+
+            <label for="code_postal">Code postal :</label>
+            <input type="text" id="code_postal" name="code_postal" value="{{ eleve.code_postal }}"><br>
+
+            <label for="ville">Ville :</label>
+            <input type="text" id="ville" name="ville" value="{{ eleve.ville }}"><br>
+
+            <label for="telephone">Téléphone :</label>
+            <input type="text" id="telephone" name="telephone" value="{{ eleve.telephone }}"><br>
+
+            <label for="prix">Prix :</label>
+            <input type="text" id="prix" name="prix" value="{{ eleve.prix }}"><br>
+
+            <input type="submit" value="Mettre à jour">
+        </form>
     </div>
 </body>
 </html>

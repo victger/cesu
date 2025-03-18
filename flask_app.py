@@ -27,8 +27,7 @@ def index():
         'prenom_eleve': c.prenom_eleve,
         'date_debut': c.date_debut.isoformat(),
         'date_fin': c.date_fin.isoformat(),
-        'duree': c.duree,
-        'prix': c.prix
+        'duree': c.duree
     } for c in get_cours]
 
     return render_template('index.html', cours_data=cours_data)
@@ -68,9 +67,9 @@ def clear_database():
 @app.route('/eleves', methods=['GET'])
 def get_eleves():
     eleves_data = Eleve.query.all()
+    print(eleves_data)
 
     return render_template('eleves.html', eleves_data=eleves_data)
-
 
 if __name__ == '__main__':
     if not os.path.exists('templates'):

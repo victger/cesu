@@ -20,8 +20,7 @@ def export_cours_to_db(events):
                 prenom_eleve=prenom,
                 date_debut=date_debut,
                 date_fin=date_fin,
-                duree=duree,
-                prix=None
+                duree=duree
         )
         cours_list.append(cours)
 

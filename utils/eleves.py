@@ -30,7 +30,8 @@ def export_eleves_to_db(cours_data):
             lieu_dit=None,
             code_postal=None,
             ville=None,
-            telephone=None
+            telephone=None,
+            prix= None
         )
         eleves_list.append(eleve)
 
