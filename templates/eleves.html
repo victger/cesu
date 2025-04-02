@@ -8,9 +8,63 @@
 <body>
     <div class="container">
         <h1>Configuration des Élèves</h1>
-            {% for eleve in eleves_data %}
-                {{eleve.prenom_eleve}}
-            {% endfor %}
+        {% for eleve in eleves_data %}
+        <form action="/update_eleve/{{ eleve.id }}" method="POST">
+            <label>Prénom de l'élève:</label>
+            <input type="text" name="prenom_eleve" value="{{ eleve.prenom_eleve }}">
+            
+            <label>Prénom du responsable:</label>
+            <input type="text" name="prenom_responsable" value="{{ eleve.prenom_responsable }}">
+            
+            <label>Nom du responsable:</label>
+            <input type="text" name="nom_responsable" value="{{ eleve.nom_responsable }}">
+            
+            <label>Civilité:</label>
+            <input type="text" name="civilite" value="{{ eleve.civilite }}">
+            
+            <label>Date de naissance:</label>
+            <input type="date" name="date_naissance" value="{{ eleve.date_naissance }}">
+            
+            <label>Ville de naissance:</label>
+            <input type="text" name="ville_naissance" value="{{ eleve.ville_naissance }}">
+            
+            <label>Département de naissance:</label>
+            <input type="text" name="departement_naissance" value="{{ eleve.departement_naissance }}">
+            
+            <label>Pays de naissance:</label>
+            <input type="text" name="pays_naissance" value="{{ eleve.pays_naissance }}">
+            
+            <label>Numéro de sécurité sociale:</label>
+            <input type="text" name="numero_securite_sociale" value="{{ eleve.numero_securite_sociale }}">
+            
+            <label>Numéro de rue:</label>
+            <input type="text" name="numero_rue" value="{{ eleve.numero_rue }}">
+            
+            <label>Type de voie:</label>
+            <input type="text" name="type_voie" value="{{ eleve.type_voie }}">
+            
+            <label>Libellé de la voie:</label>
+            <input type="text" name="libelle_voie" value="{{ eleve.libelle_voie }}">
+            
+            <label>Complément d'adresse:</label>
+            <input type="text" name="complement_adresse" value="{{ eleve.complement_adresse }}">
+            
+            <label>Code postal:</label>
+            <input type="text" name="code_postal" value="{{ eleve.code_postal }}">
+            
+            <label>Ville:</label>
+            <input type="text" name="ville" value="{{ eleve.ville }}">
+            
+            <label>Téléphone:</label>
+            <input type="text" name="telephone" value="{{ eleve.telephone }}">
+            
+            <label>Prix:</label>
+            <input type="number" step="0.01" name="prix" value="{{ eleve.prix }}">
+            
+            <button type="submit">Enregistrer</button>
+        </form>
+        <hr>
+        {% endfor %}
     </div>
 </body>
 </html>
