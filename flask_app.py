@@ -67,8 +67,8 @@ def clear_database():
 @app.route('/eleves', methods=['GET'])
 def get_eleves():
     eleves_data = Eleve.query.all()
-    print(eleves_data)
 
+    print(eleves_data)
     return render_template('eleves.html', eleves_data=eleves_data)
 
 if __name__ == '__main__':

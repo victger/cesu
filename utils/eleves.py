@@ -35,4 +35,6 @@ def export_eleves_to_db(cours_data):
         )
         eleves_list.append(eleve)
 
+    print(eleves_list)
+
     return eleves_list

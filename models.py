@@ -38,7 +38,7 @@ class Eleve(db.Model):
     prix = db.Column(db.Float, nullable=True)
 
     def __repr__(self):
-        return f"<Eleve {self.prenom_eleve} - {self.nom_responsable}>"
+        return f"<Eleve {self.prenom_eleve}>"
 
 class Emploi(db.Model):
     """Modèle pour représenter l'emploi de l'élève."""
